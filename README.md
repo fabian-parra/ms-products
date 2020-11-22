@@ -8,6 +8,7 @@ Para este proyecto se necesitan las siguientes tecnologías en tu computador:
 
 * Docker \[[Mac](https://runnable.com/docker/install-docker-on-macos)\]\[[Linux](https://runnable.com/docker/install-docker-on-linux)\]
 * NVM \[[Instalacion](https://github.com/nvm-sh/nvm)\]
+* Docker Compose \[[Instalacion](https://docs.docker.com/compose/install/)\]
 * Descargar el proyecto https://github.com/walmartdigital/brand-discounts-db
 
 ## Instalacion
@@ -33,14 +34,16 @@ Se tienen los siguientes recursos accediendo con el método GET:
 * /products/:id : Esto retornará un solo producto dado un id.
 * /products?match=cadena: Esto buscara un listado de productos donde el parámetro match se usara para filtrar lo que coincida en los campos brand y description de los productos.
 
-## Variables de entorno
+## Ejecucion con Docker
 
-Se debe tener encuenta que hay varias variables de entorno que deben ser asignadas si no se usan los valores por defecto:
+Se debe tener encuenta que hay varias variables de entorno que deben ser asignadas en el docker-compose, si no se usan los valores por defecto:
 
 * PORT: Puerto en el cual levantará el microservicio, por defecto es el 8080
 * DB_HOST: Host de la base de datos, por defecto será 127.0.0.1
 * DB_USER: Usuario de la base de datos, por defecto será brandDiscountsUse
 * DB_PASSWORD: Contraseña del usuario de la base de datos.
+
+Para levantar el contenedor se debe ejecutar `MACHINE_IP=<ip-host> DB_SECRET_PASSWORD=<db-password> docker-compose up`.
 
 
 

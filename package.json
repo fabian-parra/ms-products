@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "build": "docker build -t access-products -f docker/Dockerfile .",
+    "up": "docker-compose up",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

@@ -5,7 +5,9 @@ services:
     environment:
       PORT: 8080
       DB_HOST: 'mongo'
+      DB_USER: 'brandDiscountsUser'
+      DB_PASSWORD: ${DB_SECRET_PASSWORD}
     ports:
       - "8080:8080"
-    extra_hosts: 
-      - "mongo:${IP_DB}"
+    extra_hosts:
+      - "mongo:${MACHINE_IP}"
