@@ -1,9 +1,9 @@
 const {MongoClient} = require('mongodb')
 
 const HOST = process.env.DB_HOST || '127.0.0.1'
-const USER = process.env.DB_USER
+const USER = process.env.DB_USER || 'brandDiscountsUse'
 const PASSWORD = process.env.DB_PASSWORD
-const URL = `mongodb://USER:PASSWORD@${HOST}:27017?poolSize=5`
+const URL = `mongodb://${USER}:${PASSWORD}@${HOST}:27017?poolSize=5`
 const DATA_BASE = 'desafio_walmart'
 
 let dataBase = null
