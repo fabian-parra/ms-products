@@ -1,13 +1,13 @@
 version: '3.7'
 services:
-  access-products:
-    image: access-products
+  ms-products:
+    image: ms-products
     environment:
-      PORT: 8080
+      PORT: 8081
       DB_HOST: 'mongo'
       DB_USER: 'brandDiscountsUser'
       DB_PASSWORD: ${DB_SECRET_PASSWORD}
     ports:
-      - "8080:8080"
+      - "8081:8081"
     extra_hosts:
       - "mongo:${MACHINE_IP}"

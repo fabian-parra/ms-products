@@ -5,9 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "build": "docker build -t access-products -f docker/Dockerfile .",
+    "build": "docker build -t ms-products -f docker/Dockerfile .",
     "up": "docker-compose up",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:unit": "NODE_ENV=test NODE_PATH=./src:./test mocha --compilers js:@babel/register ./test/unit --recursive"
   },
   "keywords": [
     "test"
@@ -17,5 +17,17 @@
   "dependencies": {
     "express": "^4.17.1",
     "mongodb": "^3.6.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/register": "^7.12.1",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "eslint-plugin-mocha": "^8.0.0",
+    "mocha": "^8.2.1",
+    "mocha-clean": "^1.0.0",
+    "sinon": "^9.2.1",
+    "sinon-chai": "^3.5.0"
   }
 }
