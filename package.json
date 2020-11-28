@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "build": "docker build -t ms-products -f docker/Dockerfile .",
-    "up": "docker-compose up",
+    "up": "docker-compose up -d",
     "test:unit": "NODE_ENV=test NODE_PATH=./src:./test mocha --compilers js:@babel/register ./test/unit --recursive"
   },
   "keywords": [
